@@ -1,4 +1,4 @@
-package com.example.spajam_2024_client
+package com.example.spajam_24_app
 
 import io.flutter.embedding.android.FlutterActivity
 

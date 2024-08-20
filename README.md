@@ -1,4 +1,4 @@
-# spajam_2024_client
+# spajam_24_app
 
 A new Flutter project.
 
