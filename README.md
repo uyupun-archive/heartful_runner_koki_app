@@ -1,16 +1,25 @@
 # spajam_24_app
 
-A new Flutter project.
+## 環境構築
 
-## Getting Started
+以下のQiitaの記事を参考に、Android・iOSをビルドするために必要なツールをインストールする。
 
-This project is a starting point for a Flutter application.
+[https://qiita.com/takashimelon/items/57a160106108971f1a2a](https://qiita.com/takashimelon/items/57a160106108971f1a2a)
 
-A few resources to get you started if this is your first Flutter project:
+プロジェクトで使用している各ツールのバージョンは下記の通りである。
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Android Studio: Android Studio Koala | 2024.1.1 Patch 1
+- CocoaPods: 1.15.2
+- Xcode: 15.4
+- FVM: 3.1.7
+- Flutter: 3.24.0
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+各ツールのインストール後、以下を実行しプロジェクトを起動する
+
+```bash
+$ fvm use 3.24.0
+
+$ flutter pub get
+
+$ flutter run
+```
