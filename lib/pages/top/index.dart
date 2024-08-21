@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-class Top extends StatelessWidget {
+class Top extends HookWidget {
   const Top({super.key});
 
   @override
@@ -21,7 +21,7 @@ class Top extends StatelessWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              counter.toString(),
+              counter.value.toString(),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
