@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:spajam_24_app/router.dart';
 
 class Top extends HookWidget {
   const Top({super.key});
@@ -23,6 +24,13 @@ class Top extends HookWidget {
             Text(
               counter.value.toString(),
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 24),
+            TextButton(
+              onPressed: () {
+                const HelloRoute().push(context);
+              },
+              child: const Text('Helloページへ'),
             ),
           ],
         ),
