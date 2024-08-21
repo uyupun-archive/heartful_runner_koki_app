@@ -7,17 +7,17 @@ part of 'router.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $topRoute,
-      $helloRoute,
+      $topPageRoute,
+      $helloPageRoute,
     ];
 
-RouteBase get $topRoute => GoRouteData.$route(
+RouteBase get $topPageRoute => GoRouteData.$route(
       path: '/',
-      factory: $TopRouteExtension._fromState,
+      factory: $TopPageRouteExtension._fromState,
     );
 
-extension $TopRouteExtension on TopRoute {
-  static TopRoute _fromState(GoRouterState state) => const TopRoute();
+extension $TopPageRouteExtension on TopPageRoute {
+  static TopPageRoute _fromState(GoRouterState state) => const TopPageRoute();
 
   String get location => GoRouteData.$location(
         '/',
@@ -33,13 +33,14 @@ extension $TopRouteExtension on TopRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $helloRoute => GoRouteData.$route(
+RouteBase get $helloPageRoute => GoRouteData.$route(
       path: '/hello',
-      factory: $HelloRouteExtension._fromState,
+      factory: $HelloPageRouteExtension._fromState,
     );
 
-extension $HelloRouteExtension on HelloRoute {
-  static HelloRoute _fromState(GoRouterState state) => const HelloRoute();
+extension $HelloPageRouteExtension on HelloPageRoute {
+  static HelloPageRoute _fromState(GoRouterState state) =>
+      const HelloPageRoute();
 
   String get location => GoRouteData.$location(
         '/hello',

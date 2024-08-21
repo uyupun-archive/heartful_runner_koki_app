@@ -5,24 +5,24 @@ import 'package:spajam_24_app/pages/top/index.dart';
 
 part 'router.g.dart';
 
-@TypedGoRoute<TopRoute>(
+@TypedGoRoute<TopPageRoute>(
   path: '/',
 )
-class TopRoute extends GoRouteData {
-  const TopRoute();
+class TopPageRoute extends GoRouteData {
+  const TopPageRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const Top();
+  Widget build(BuildContext context, GoRouterState state) => const TopPage();
 }
 
-@TypedGoRoute<HelloRoute>(
+@TypedGoRoute<HelloPageRoute>(
   path: '/hello',
 )
-class HelloRoute extends GoRouteData {
-  const HelloRoute();
+class HelloPageRoute extends GoRouteData {
+  const HelloPageRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const Hello();
+  Widget build(BuildContext context, GoRouterState state) => const HelloPage();
 }
 
 final router = GoRouter(
