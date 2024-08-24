@@ -8,3 +8,4 @@ SharedPreferences sharedPreferences(SharedPreferencesRef ref) =>
     throw UnimplementedError();
 
 const prefsKeyToken = 'prefs_key_token';
+const prefsKeyCode = 'prefs_key_code';

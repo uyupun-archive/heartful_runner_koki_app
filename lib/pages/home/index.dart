@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spajam_24_app/gen/assets.gen.dart';
+import 'package:spajam_24_app/router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
             const Spacer(),
             TextButton(
               onPressed: () {
-                // 画面遷移
+                const DeliverPageRoute().push(context);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                '作成する',
+                '届ける',
                 style: TextStyle(color: Colors.black),
               ),
             ),

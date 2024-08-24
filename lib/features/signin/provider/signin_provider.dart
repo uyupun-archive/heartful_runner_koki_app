@@ -28,7 +28,9 @@ Future<bool> signin(
 
   if (res.statusCode == 200) {
     final resBody = SigninResponse.fromJson(jsonDecode(res.body));
-    ref.read(sharedPreferencesProvider).setString(prefsKeyToken, resBody.token);
+    await ref
+        .read(sharedPreferencesProvider)
+        .setString(prefsKeyToken, resBody.token);
     return true;
   }
 
