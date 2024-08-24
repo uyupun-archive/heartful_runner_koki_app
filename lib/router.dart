@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
+import 'package:spajam_24_app/pages/signup/index.dart';
 import 'package:spajam_24_app/pages/top/index.dart';
 
 part 'router.g.dart';
@@ -34,6 +35,16 @@ class SigninPageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const SigninPage();
+}
+
+@TypedGoRoute<SignupPageRoute>(
+  path: '/signup',
+)
+class SignupPageRoute extends GoRouteData {
+  const SignupPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const SignupPage();
 }
 
 final router = GoRouter(
