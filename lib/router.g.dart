@@ -13,6 +13,7 @@ List<RouteBase> get $appRoutes => [
       $signupPageRoute,
       $homePagePageRoute,
       $deliverPageRoute,
+      $deliveringPageRoute,
     ];
 
 RouteBase get $topPageRoute => GoRouteData.$route(
@@ -140,6 +141,29 @@ extension $DeliverPageRouteExtension on DeliverPageRoute {
 
   String get location => GoRouteData.$location(
         '/deliver',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $deliveringPageRoute => GoRouteData.$route(
+      path: '/delivering',
+      factory: $DeliveringPageRouteExtension._fromState,
+    );
+
+extension $DeliveringPageRouteExtension on DeliveringPageRoute {
+  static DeliveringPageRoute _fromState(GoRouterState state) =>
+      const DeliveringPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/delivering',
       );
 
   void go(BuildContext context) => context.go(location);

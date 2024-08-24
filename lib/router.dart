@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
 import 'package:spajam_24_app/pages/deliver/index.dart';
+import 'package:spajam_24_app/pages/delivering/index.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
@@ -72,6 +73,17 @@ class DeliverPageRoute extends GoRouteData {
       const DeliverPage();
 }
 
+@TypedGoRoute<DeliveringPageRoute>(
+  path: '/delivering',
+)
+class DeliveringPageRoute extends GoRouteData {
+  const DeliveringPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const DeliveringPage();
+}
+
 final router = GoRouter(
   debugLogDiagnostics: true,
   initialLocation: '/',
@@ -79,9 +91,14 @@ final router = GoRouter(
   redirect: (context, state) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(prefsKeyToken);
+    final code = prefs.getString(prefsKeyCode);
 
-    if (state.uri.toString() == '/' && token != null) {
-      return '/home';
+    if (token != null) {
+      if (state.uri.toString() == '/') {
+        return '/home';
+      } else if (code != null) {
+        return '/delivering';
+      }
     }
 
     return null;
