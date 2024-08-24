@@ -27,6 +27,7 @@ class TopPage extends HookWidget {
               ),
               child: const Text(
                 'サインイン',
+                style: TextStyle(color: Colors.black),
               ),
             ),
             const SizedBox(height: 20),
