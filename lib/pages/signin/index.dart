@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:spajam_24_app/features/signin/provider/signin_provider.dart';
 
-class SigninPage extends HookWidget {
+class SigninPage extends HookConsumerWidget {
   const SigninPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final userIdController = useTextEditingController();
     final passwordController = useTextEditingController();
     final isError = useState(false);
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('サインイン'),
       ),
       body: Padding(
@@ -54,8 +55,18 @@ class SigninPage extends HookWidget {
             Center(
               child: TextButton(
                 onPressed: () async {
-                  // TODO: API通信
-                  isError.value = true;
+                  isError.value = false;
+
+                  final isSuccess = await ref.read(signinProvider(
+                    userId: userIdController.text,
+                    password: passwordController.text,
+                  ).future);
+
+                  if (isSuccess) {
+                    // ページ遷移
+                  } else {
+                    isError.value = true;
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
