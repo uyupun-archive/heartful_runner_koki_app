@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:spajam_24_app/features/signup/provider/signup_provider.dart';
 
 class SignupPage extends HookConsumerWidget {
   const SignupPage({super.key});
@@ -56,7 +57,12 @@ class SignupPage extends HookConsumerWidget {
                 onPressed: () async {
                   isError.value = false;
 
-                  final isSuccess = false;
+                  final isSuccess = await ref.read(
+                    signupProvider(
+                      userId: userIdController.text,
+                      password: passwordController.text,
+                    ).future,
+                  );
 
                   if (isSuccess) {
                     // ページ遷移
@@ -71,7 +77,7 @@ class SignupPage extends HookConsumerWidget {
                   ),
                 ),
                 child: const Text(
-                  'サインイン',
+                  'サインアップ',
                   style: TextStyle(color: Colors.black),
                 ),
               ),
