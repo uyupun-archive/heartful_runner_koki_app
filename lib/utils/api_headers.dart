@@ -1,1 +1,4 @@
-const apiHeaders = {'content-type': 'application/json'};
+const apiHeaders = {
+  'content-type': 'application/json',
+  'Accept': 'application/json',
+};
