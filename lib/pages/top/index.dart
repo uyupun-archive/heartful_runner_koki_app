@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:spajam_24_app/router.dart';
 
 class TopPage extends HookWidget {
   const TopPage({super.key});
@@ -15,15 +16,36 @@ class TopPage extends HookWidget {
             const Text('〜愛は地球を救う〜（仮）'),
             const Spacer(),
             TextButton(
-                onPressed: () {
-                  // sign in API
-                },
-                child: const Text('サインイン')),
+              onPressed: () {
+                const SigninPageRoute().push(context);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'サインイン',
+              ),
+            ),
+            const SizedBox(height: 20),
             TextButton(
-                onPressed: () {
-                  // sign up API
-                },
-                child: const Text('サインアップ'))
+              onPressed: () {
+                const SignupPageRoute().push(context);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'サインアップ',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            const Spacer(),
           ],
         ),
       ),
