@@ -28,7 +28,9 @@ Future<bool> signup(
 
   if (res.statusCode == 201) {
     final resBody = SignupResponse.fromJson(jsonDecode(res.body));
-    ref.read(sharedPreferencesProvider).setString(prefsKeyToken, resBody.token);
+    await ref
+        .read(sharedPreferencesProvider)
+        .setString(prefsKeyToken, resBody.token);
     return true;
   }
 
