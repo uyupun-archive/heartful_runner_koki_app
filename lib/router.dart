@@ -91,9 +91,14 @@ final router = GoRouter(
   redirect: (context, state) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(prefsKeyToken);
+    final code = prefs.getString(prefsKeyCode);
 
-    if (state.uri.toString() == '/' && token != null) {
-      return '/home';
+    if (token != null) {
+      if (state.uri.toString() == '/') {
+        return '/home';
+      } else if (code != null) {
+        return '/delivering';
+      }
     }
 
     return null;
