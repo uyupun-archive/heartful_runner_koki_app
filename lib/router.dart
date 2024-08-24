@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
+import 'package:spajam_24_app/pages/deliver/index.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
@@ -58,6 +59,17 @@ class HomePagePageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomePage();
+}
+
+@TypedGoRoute<DeliverPageRoute>(
+  path: '/deliver',
+)
+class DeliverPageRoute extends GoRouteData {
+  const DeliverPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const DeliverPage();
 }
 
 final router = GoRouter(
