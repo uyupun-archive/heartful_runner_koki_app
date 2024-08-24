@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spajam_24_app/common/provider/shared_preferences.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
@@ -62,4 +64,14 @@ final router = GoRouter(
   debugLogDiagnostics: true,
   initialLocation: '/',
   routes: $appRoutes,
+  redirect: (context, state) async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString(prefsKeyToken);
+
+    if (state.uri.toString() == '/' && token != null) {
+      return '/home';
+    }
+
+    return null;
+  },
 );
