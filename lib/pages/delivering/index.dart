@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spajam_24_app/gen/assets.gen.dart';
+import 'package:spajam_24_app/router.dart';
 
 class DeliveringPage extends StatelessWidget {
   const DeliveringPage({super.key});
@@ -22,7 +23,7 @@ class DeliveringPage extends StatelessWidget {
               const Spacer(),
               TextButton(
                 onPressed: () {
-                  // 画面遷移
+                  const PassPageRoute().push(context);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
