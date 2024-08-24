@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:spajam_24_app/features/deliver/provider/deliver_provider.dart';
+import 'package:spajam_24_app/router.dart';
 
 class DeliverPage extends HookConsumerWidget {
   const DeliverPage({super.key});
@@ -77,7 +78,7 @@ class DeliverPage extends HookConsumerWidget {
                   );
 
                   if (isSuccess) {
-                    // TODO: 画面遷移
+                    const DeliveringPageRoute().go(context);
                   } else {
                     isError.value = true;
                   }
