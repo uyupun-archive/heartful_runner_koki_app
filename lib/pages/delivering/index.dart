@@ -16,7 +16,7 @@ class DeliveringPage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 60),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Assets.fire.image(),
               ),
               const Spacer(),
