@@ -57,5 +57,9 @@ Future<bool> deliver(
     return false;
   }
 
+  await ref
+      .read(sharedPreferencesProvider)
+      .setString(prefsKeyCode, envelope.code);
+
   return true;
 }
