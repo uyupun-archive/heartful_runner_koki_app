@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:spajam_24_app/features/signin/provider/signin_provider.dart';
+import 'package:spajam_24_app/router.dart';
 
 class SigninPage extends HookConsumerWidget {
   const SigninPage({super.key});
@@ -63,7 +64,7 @@ class SigninPage extends HookConsumerWidget {
                   ).future);
 
                   if (isSuccess) {
-                    // ページ遷移
+                    const HomePagePageRoute().go(context);
                   } else {
                     isError.value = true;
                   }
