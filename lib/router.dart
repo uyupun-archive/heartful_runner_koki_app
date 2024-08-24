@@ -6,6 +6,7 @@ import 'package:spajam_24_app/pages/deliver/index.dart';
 import 'package:spajam_24_app/pages/delivering/index.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
+import 'package:spajam_24_app/pages/pass/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
 import 'package:spajam_24_app/pages/signup/index.dart';
 import 'package:spajam_24_app/pages/top/index.dart';
@@ -84,6 +85,16 @@ class DeliveringPageRoute extends GoRouteData {
       const DeliveringPage();
 }
 
+@TypedGoRoute<PassPageRoute>(
+  path: '/pass',
+)
+class PassPageRoute extends GoRouteData {
+  const PassPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const PassPage();
+}
+
 final router = GoRouter(
   debugLogDiagnostics: true,
   initialLocation: '/',
@@ -94,10 +105,10 @@ final router = GoRouter(
     final code = prefs.getString(prefsKeyCode);
 
     if (token != null) {
-      if (state.uri.toString() == '/') {
-        return '/home';
-      } else if (code != null) {
+      if (state.uri.toString() == '/' && code != null) {
         return '/delivering';
+      } else if (state.uri.toString() == '/') {
+        return '/home';
       }
     }
 
