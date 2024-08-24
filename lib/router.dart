@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
+import 'package:spajam_24_app/pages/signin/index.dart';
 import 'package:spajam_24_app/pages/top/index.dart';
 
 part 'router.g.dart';
@@ -23,6 +24,16 @@ class HelloPageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const HelloPage();
+}
+
+@TypedGoRoute<SigninPageRoute>(
+  path: '/signin',
+)
+class SigninPageRoute extends GoRouteData {
+  const SigninPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const SigninPage();
 }
 
 final router = GoRouter(
