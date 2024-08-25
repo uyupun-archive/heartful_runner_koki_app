@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'deliver_provider.dart';
+part of 'message_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$deliverHash() => r'b2dc0916be6ca0b5b607658f149ee26790cebad7';
+String _$relayMessageHash() => r'93800d22a3ac08910f9ae7f8f5934b574aaf7e4f';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,34 +29,31 @@ class _SystemHash {
   }
 }
 
-/// See also [deliver].
-@ProviderFor(deliver)
-const deliverProvider = DeliverFamily();
+/// See also [relayMessage].
+@ProviderFor(relayMessage)
+const relayMessageProvider = RelayMessageFamily();
 
-/// See also [deliver].
-class DeliverFamily extends Family<AsyncValue<bool>> {
-  /// See also [deliver].
-  const DeliverFamily();
+/// See also [relayMessage].
+class RelayMessageFamily extends Family<AsyncValue<bool>> {
+  /// See also [relayMessage].
+  const RelayMessageFamily();
 
-  /// See also [deliver].
-  DeliverProvider call({
-    required String title,
+  /// See also [relayMessage].
+  RelayMessageProvider call({
     required String content,
     required String writerName,
   }) {
-    return DeliverProvider(
-      title: title,
+    return RelayMessageProvider(
       content: content,
       writerName: writerName,
     );
   }
 
   @override
-  DeliverProvider getProviderOverride(
-    covariant DeliverProvider provider,
+  RelayMessageProvider getProviderOverride(
+    covariant RelayMessageProvider provider,
   ) {
     return call(
-      title: provider.title,
       content: provider.content,
       writerName: provider.writerName,
     );
@@ -74,66 +71,61 @@ class DeliverFamily extends Family<AsyncValue<bool>> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'deliverProvider';
+  String? get name => r'relayMessageProvider';
 }
 
-/// See also [deliver].
-class DeliverProvider extends AutoDisposeFutureProvider<bool> {
-  /// See also [deliver].
-  DeliverProvider({
-    required String title,
+/// See also [relayMessage].
+class RelayMessageProvider extends AutoDisposeFutureProvider<bool> {
+  /// See also [relayMessage].
+  RelayMessageProvider({
     required String content,
     required String writerName,
   }) : this._internal(
-          (ref) => deliver(
-            ref as DeliverRef,
-            title: title,
+          (ref) => relayMessage(
+            ref as RelayMessageRef,
             content: content,
             writerName: writerName,
           ),
-          from: deliverProvider,
-          name: r'deliverProvider',
+          from: relayMessageProvider,
+          name: r'relayMessageProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$deliverHash,
-          dependencies: DeliverFamily._dependencies,
-          allTransitiveDependencies: DeliverFamily._allTransitiveDependencies,
-          title: title,
+                  : _$relayMessageHash,
+          dependencies: RelayMessageFamily._dependencies,
+          allTransitiveDependencies:
+              RelayMessageFamily._allTransitiveDependencies,
           content: content,
           writerName: writerName,
         );
 
-  DeliverProvider._internal(
+  RelayMessageProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.title,
     required this.content,
     required this.writerName,
   }) : super.internal();
 
-  final String title;
   final String content;
   final String writerName;
 
   @override
   Override overrideWith(
-    FutureOr<bool> Function(DeliverRef provider) create,
+    FutureOr<bool> Function(RelayMessageRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: DeliverProvider._internal(
-        (ref) => create(ref as DeliverRef),
+      override: RelayMessageProvider._internal(
+        (ref) => create(ref as RelayMessageRef),
         from: from,
         name: null,
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        title: title,
         content: content,
         writerName: writerName,
       ),
@@ -142,13 +134,12 @@ class DeliverProvider extends AutoDisposeFutureProvider<bool> {
 
   @override
   AutoDisposeFutureProviderElement<bool> createElement() {
-    return _DeliverProviderElement(this);
+    return _RelayMessageProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is DeliverProvider &&
-        other.title == title &&
+    return other is RelayMessageProvider &&
         other.content == content &&
         other.writerName == writerName;
   }
@@ -156,7 +147,6 @@ class DeliverProvider extends AutoDisposeFutureProvider<bool> {
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, title.hashCode);
     hash = _SystemHash.combine(hash, content.hashCode);
     hash = _SystemHash.combine(hash, writerName.hashCode);
 
@@ -164,10 +154,7 @@ class DeliverProvider extends AutoDisposeFutureProvider<bool> {
   }
 }
 
-mixin DeliverRef on AutoDisposeFutureProviderRef<bool> {
-  /// The parameter `title` of this provider.
-  String get title;
-
+mixin RelayMessageRef on AutoDisposeFutureProviderRef<bool> {
   /// The parameter `content` of this provider.
   String get content;
 
@@ -175,16 +162,14 @@ mixin DeliverRef on AutoDisposeFutureProviderRef<bool> {
   String get writerName;
 }
 
-class _DeliverProviderElement extends AutoDisposeFutureProviderElement<bool>
-    with DeliverRef {
-  _DeliverProviderElement(super.provider);
+class _RelayMessageProviderElement
+    extends AutoDisposeFutureProviderElement<bool> with RelayMessageRef {
+  _RelayMessageProviderElement(super.provider);
 
   @override
-  String get title => (origin as DeliverProvider).title;
+  String get content => (origin as RelayMessageProvider).content;
   @override
-  String get content => (origin as DeliverProvider).content;
-  @override
-  String get writerName => (origin as DeliverProvider).writerName;
+  String get writerName => (origin as RelayMessageProvider).writerName;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -15,6 +15,8 @@ List<RouteBase> get $appRoutes => [
       $deliverPageRoute,
       $deliveringPageRoute,
       $passPageRoute,
+      $relayScanPageRoute,
+      $relayMessagePageRoute,
       $relayedPageRoute,
     ];
 
@@ -188,6 +190,52 @@ extension $PassPageRouteExtension on PassPageRoute {
 
   String get location => GoRouteData.$location(
         '/pass',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $relayScanPageRoute => GoRouteData.$route(
+      path: '/relay/scan',
+      factory: $RelayScanPageRouteExtension._fromState,
+    );
+
+extension $RelayScanPageRouteExtension on RelayScanPageRoute {
+  static RelayScanPageRoute _fromState(GoRouterState state) =>
+      const RelayScanPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/relay/scan',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $relayMessagePageRoute => GoRouteData.$route(
+      path: '/relay/message',
+      factory: $RelayMessagePageRouteExtension._fromState,
+    );
+
+extension $RelayMessagePageRouteExtension on RelayMessagePageRoute {
+  static RelayMessagePageRoute _fromState(GoRouterState state) =>
+      const RelayMessagePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/relay/message',
       );
 
   void go(BuildContext context) => context.go(location);
