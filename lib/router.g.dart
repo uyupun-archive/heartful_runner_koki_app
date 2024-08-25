@@ -15,6 +15,7 @@ List<RouteBase> get $appRoutes => [
       $deliverPageRoute,
       $deliveringPageRoute,
       $passPageRoute,
+      $relayedPageRoute,
     ];
 
 RouteBase get $topPageRoute => GoRouteData.$route(
@@ -187,6 +188,29 @@ extension $PassPageRouteExtension on PassPageRoute {
 
   String get location => GoRouteData.$location(
         '/pass',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $relayedPageRoute => GoRouteData.$route(
+      path: '/relayed',
+      factory: $RelayedPageRouteExtension._fromState,
+    );
+
+extension $RelayedPageRouteExtension on RelayedPageRoute {
+  static RelayedPageRoute _fromState(GoRouterState state) =>
+      const RelayedPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/relayed',
       );
 
   void go(BuildContext context) => context.go(location);

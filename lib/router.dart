@@ -7,6 +7,7 @@ import 'package:spajam_24_app/pages/delivering/index.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
 import 'package:spajam_24_app/pages/pass/index.dart';
+import 'package:spajam_24_app/pages/relayed/index.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
 import 'package:spajam_24_app/pages/signup/index.dart';
 import 'package:spajam_24_app/pages/top/index.dart';
@@ -95,9 +96,20 @@ class PassPageRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const PassPage();
 }
 
+@TypedGoRoute<RelayedPageRoute>(
+  path: '/relayed',
+)
+class RelayedPageRoute extends GoRouteData {
+  const RelayedPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const RelayedPage();
+}
+
 final router = GoRouter(
   debugLogDiagnostics: true,
-  initialLocation: '/',
+  initialLocation: '/relayed',
   routes: $appRoutes,
   redirect: (context, state) async {
     final prefs = await SharedPreferences.getInstance();
