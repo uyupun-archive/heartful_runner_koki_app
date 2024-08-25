@@ -21,20 +21,12 @@ Future<bool> deliver(
   final token = ref.watch(sharedPreferencesProvider).getString(prefsKeyToken);
   final reqEnvelopeBody = jsonEncode(EnvelopeRequest(title: title).toJson());
 
-  print('--------req----------');
-  print('$token');
-  print('$reqEnvelopeBody');
-  print('--------req----------');
-
   final envelopeRes = await http.post(
     Uri.parse('$baseUrl/api/envelopes'),
     headers: {...apiHeaders, 'Authorization': 'Bearer $token'},
     body: reqEnvelopeBody,
   );
-  print('--------res----------');
-  print('${envelopeRes.statusCode}');
-  print('${envelopeRes.body}');
-  print('--------res----------');
+
   if (envelopeRes.statusCode != 200 && envelopeRes.statusCode != 201) {
     return false;
   }
@@ -42,8 +34,10 @@ Future<bool> deliver(
   final envelope = EnvelopeResponse.fromJson(jsonDecode(envelopeRes.body));
   final reqMessageBody = jsonEncode(
     MessageRequest(
-            envelopeId: envelope.id, content: content, writerName: writerName)
-        .toJson(),
+      envelopeId: envelope.id,
+      content: content,
+      writerName: writerName,
+    ).toJson(),
   );
 
   final messageRes = await http.post(
@@ -52,7 +46,6 @@ Future<bool> deliver(
     body: reqMessageBody,
   );
 
-  print('------------${messageRes.statusCode}-----------');
   if (messageRes.statusCode != 200 && messageRes.statusCode != 201) {
     return false;
   }
