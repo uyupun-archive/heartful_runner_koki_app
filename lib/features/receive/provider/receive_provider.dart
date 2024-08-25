@@ -3,15 +3,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
-import 'package:spajam_24_app/features/relay/model/verify_envelope_response.dart';
 import 'package:spajam_24_app/utils/api_headers.dart';
 import 'package:spajam_24_app/utils/base_url.dart';
 
-part 'verify_envelope_provider.g.dart';
+part 'receive_provider.g.dart';
 
 @riverpod
-Future<bool> verifyEnvelope(
-  VerifyEnvelopeRef ref, {
+Future<bool> receive(
+  ReceiveRef ref, {
   required String code,
 }) async {
   final token = ref.watch(sharedPreferencesProvider).getString(prefsKeyToken);
@@ -20,8 +19,8 @@ Future<bool> verifyEnvelope(
     {"code": code},
   );
 
-  final res = await http.post(
-    Uri.parse('$baseUrl/api/envelopes/verify'),
+  final res = await http.put(
+    Uri.parse('$baseUrl/api/envelopes'),
     headers: {...apiHeaders, 'Authorization': 'Bearer $token'},
     body: reqBody,
   );
@@ -30,12 +29,16 @@ Future<bool> verifyEnvelope(
     return false;
   }
 
-  final envelope = VerifyEnvelopeResponse.fromJson(jsonDecode(res.body));
-
-  await ref.read(sharedPreferencesProvider).setInt(
-        prefsKeyEnvelopeId,
-        envelope.envelopeId,
+  ref.read(sharedPreferencesProvider).remove(
+        prefsKeyCode,
       );
+  ref.read(sharedPreferencesProvider).remove(
+        prefsKeyEnvelopeId,
+      );
+
+  await ref
+      .read(sharedPreferencesProvider)
+      .setString(prefsKeyReceivedEnvelope, res.body);
 
   return true;
 }

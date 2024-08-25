@@ -10,3 +10,4 @@ SharedPreferences sharedPreferences(SharedPreferencesRef ref) =>
 const prefsKeyToken = 'prefs_key_token';
 const prefsKeyCode = 'prefs_key_code';
 const prefsKeyEnvelopeId = 'prefs_key_envelope_id';
+const prefsKeyReceivedEnvelope = 'prefs_key_received_envelope';

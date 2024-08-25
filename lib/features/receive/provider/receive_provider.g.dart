@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'verify_envelope_provider.dart';
+part of 'receive_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$verifyEnvelopeHash() => r'84e9eddf3108454bad7c05e8bc7b37c59a34c872';
+String _$receiveHash() => r'03d6d6af446dbd98c26c214e17ce7e95d6d94715';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,27 +29,27 @@ class _SystemHash {
   }
 }
 
-/// See also [verifyEnvelope].
-@ProviderFor(verifyEnvelope)
-const verifyEnvelopeProvider = VerifyEnvelopeFamily();
+/// See also [receive].
+@ProviderFor(receive)
+const receiveProvider = ReceiveFamily();
 
-/// See also [verifyEnvelope].
-class VerifyEnvelopeFamily extends Family<AsyncValue<bool>> {
-  /// See also [verifyEnvelope].
-  const VerifyEnvelopeFamily();
+/// See also [receive].
+class ReceiveFamily extends Family<AsyncValue<bool>> {
+  /// See also [receive].
+  const ReceiveFamily();
 
-  /// See also [verifyEnvelope].
-  VerifyEnvelopeProvider call({
+  /// See also [receive].
+  ReceiveProvider call({
     required String code,
   }) {
-    return VerifyEnvelopeProvider(
+    return ReceiveProvider(
       code: code,
     );
   }
 
   @override
-  VerifyEnvelopeProvider getProviderOverride(
-    covariant VerifyEnvelopeProvider provider,
+  ReceiveProvider getProviderOverride(
+    covariant ReceiveProvider provider,
   ) {
     return call(
       code: provider.code,
@@ -68,32 +68,31 @@ class VerifyEnvelopeFamily extends Family<AsyncValue<bool>> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'verifyEnvelopeProvider';
+  String? get name => r'receiveProvider';
 }
 
-/// See also [verifyEnvelope].
-class VerifyEnvelopeProvider extends AutoDisposeFutureProvider<bool> {
-  /// See also [verifyEnvelope].
-  VerifyEnvelopeProvider({
+/// See also [receive].
+class ReceiveProvider extends AutoDisposeFutureProvider<bool> {
+  /// See also [receive].
+  ReceiveProvider({
     required String code,
   }) : this._internal(
-          (ref) => verifyEnvelope(
-            ref as VerifyEnvelopeRef,
+          (ref) => receive(
+            ref as ReceiveRef,
             code: code,
           ),
-          from: verifyEnvelopeProvider,
-          name: r'verifyEnvelopeProvider',
+          from: receiveProvider,
+          name: r'receiveProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$verifyEnvelopeHash,
-          dependencies: VerifyEnvelopeFamily._dependencies,
-          allTransitiveDependencies:
-              VerifyEnvelopeFamily._allTransitiveDependencies,
+                  : _$receiveHash,
+          dependencies: ReceiveFamily._dependencies,
+          allTransitiveDependencies: ReceiveFamily._allTransitiveDependencies,
           code: code,
         );
 
-  VerifyEnvelopeProvider._internal(
+  ReceiveProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -107,12 +106,12 @@ class VerifyEnvelopeProvider extends AutoDisposeFutureProvider<bool> {
 
   @override
   Override overrideWith(
-    FutureOr<bool> Function(VerifyEnvelopeRef provider) create,
+    FutureOr<bool> Function(ReceiveRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: VerifyEnvelopeProvider._internal(
-        (ref) => create(ref as VerifyEnvelopeRef),
+      override: ReceiveProvider._internal(
+        (ref) => create(ref as ReceiveRef),
         from: from,
         name: null,
         dependencies: null,
@@ -125,12 +124,12 @@ class VerifyEnvelopeProvider extends AutoDisposeFutureProvider<bool> {
 
   @override
   AutoDisposeFutureProviderElement<bool> createElement() {
-    return _VerifyEnvelopeProviderElement(this);
+    return _ReceiveProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is VerifyEnvelopeProvider && other.code == code;
+    return other is ReceiveProvider && other.code == code;
   }
 
   @override
@@ -142,17 +141,17 @@ class VerifyEnvelopeProvider extends AutoDisposeFutureProvider<bool> {
   }
 }
 
-mixin VerifyEnvelopeRef on AutoDisposeFutureProviderRef<bool> {
+mixin ReceiveRef on AutoDisposeFutureProviderRef<bool> {
   /// The parameter `code` of this provider.
   String get code;
 }
 
-class _VerifyEnvelopeProviderElement
-    extends AutoDisposeFutureProviderElement<bool> with VerifyEnvelopeRef {
-  _VerifyEnvelopeProviderElement(super.provider);
+class _ReceiveProviderElement extends AutoDisposeFutureProviderElement<bool>
+    with ReceiveRef {
+  _ReceiveProviderElement(super.provider);
 
   @override
-  String get code => (origin as VerifyEnvelopeProvider).code;
+  String get code => (origin as ReceiveProvider).code;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

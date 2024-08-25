@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:spajam_24_app/common/provider/shared_preferences.dart';
-import 'package:spajam_24_app/features/relay/provider/verify_envelope_provider.dart';
+import 'package:spajam_24_app/features/receive/provider/receive_provider.dart';
 import 'package:spajam_24_app/router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-class RelayScanPage extends ConsumerStatefulWidget {
-  const RelayScanPage({super.key});
+class ReceivePage extends ConsumerStatefulWidget {
+  const ReceivePage({super.key});
 
   @override
   _PageState createState() => _PageState();
 }
 
-class _PageState extends ConsumerState<RelayScanPage> {
+class _PageState extends ConsumerState<ReceivePage> {
   final _controller = MobileScannerController(
     detectionSpeed: DetectionSpeed.noDuplicates,
   );
@@ -29,7 +28,7 @@ class _PageState extends ConsumerState<RelayScanPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('中継する'),
+        title: const Text('受け取る'),
       ),
       body: Center(
         child: Column(
@@ -50,14 +49,11 @@ class _PageState extends ConsumerState<RelayScanPage> {
                     });
 
                     final isSuccess = await ref.read(
-                      verifyEnvelopeProvider(code: value).future,
+                      receiveProvider(code: value).future,
                     );
 
                     if (isSuccess) {
-                      await ref
-                          .read(sharedPreferencesProvider)
-                          .setString(prefsKeyCode, value);
-                      const RelayMessagePageRoute().push(context);
+                      const ReceivedPageRoute().go(context);
                     } else {
                       setState(() {
                         _isError = true;
@@ -70,7 +66,7 @@ class _PageState extends ConsumerState<RelayScanPage> {
             if (_isError) ...[
               const SizedBox(height: 24),
               const Text(
-                '寄せ書きの中継に失敗しました。',
+                '寄せ書きの受け取りに失敗しました。',
                 style: TextStyle(color: Colors.red),
               ),
             ],

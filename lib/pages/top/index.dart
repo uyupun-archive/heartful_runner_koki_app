@@ -12,8 +12,7 @@ class TopPage extends HookWidget {
         child: Column(
           children: [
             const Spacer(),
-            const Text('24時間温泉ハッカソン 応援リレー'),
-            const Text('〜愛は地球を救う〜（仮）'),
+            const Text('ハートフルランナー　聖'),
             const Spacer(),
             TextButton(
               onPressed: () {
