@@ -22,6 +22,7 @@ dependencies:
   go_router: ^14.2.3
   shared_preferences: ^2.3.2
   qr_flutter: ^4.1.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -47,3 +48,10 @@ flutter:
   assets:
     - assets/fire.gif
     - assets/no_fire.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launchIcon.png"
+  adaptive_icon_background: "#FFFFFF"  # 背景は白
+  adaptive_icon_foreground: "assets/launchIcon.png"  # 前景部分の画像
