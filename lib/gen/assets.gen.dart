@@ -13,10 +13,12 @@ class Assets {
   Assets._();
 
   static const AssetGenImage fire = AssetGenImage('assets/fire.gif');
+  static const AssetGenImage launchIcon =
+      AssetGenImage('assets/launchIcon.png');
   static const AssetGenImage noFire = AssetGenImage('assets/no_fire.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [fire, noFire];
+  static List<AssetGenImage> get values => [fire, launchIcon, noFire];
 }
 
 class AssetGenImage {

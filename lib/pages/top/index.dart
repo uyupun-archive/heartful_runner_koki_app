@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:spajam_24_app/gen/assets.gen.dart';
 import 'package:spajam_24_app/router.dart';
 
 class TopPage extends HookWidget {
@@ -12,6 +11,13 @@ class TopPage extends HookWidget {
       body: Center(
         child: Column(
           children: [
+            const Spacer(),
+            Image.asset(
+              'assets/launchIcon.png',
+              width: 150.0,
+              height: 150.0,
+              fit: BoxFit.contain, // 画像が150x150の領域に収まるように調整
+            ),
             const Text(
               'ハートフルランナー聖(こうき)',
               textScaler: TextScaler.linear(2.23),

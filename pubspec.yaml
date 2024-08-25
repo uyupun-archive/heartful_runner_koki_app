@@ -48,6 +48,7 @@ flutter:
     assets:
         - assets/fire.gif
         - assets/no_fire.png
+        - assets/launchIcon.png
 
 flutter_icons:
     android: true
