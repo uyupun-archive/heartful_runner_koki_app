@@ -6,7 +6,7 @@ part of 'verify_envelope_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$verifyEnvelopeHash() => r'9de89e7f71d339b5e23a49c5057b7cdd7cfb06f5';
+String _$verifyEnvelopeHash() => r'84e9eddf3108454bad7c05e8bc7b37c59a34c872';
 
 /// Copied from Dart SDK
 class _SystemHash {

@@ -32,9 +32,9 @@ Future<bool> verifyEnvelope(
 
   final envelope = VerifyEnvelopeResponse.fromJson(jsonDecode(res.body));
 
-  await ref.read(sharedPreferencesProvider).setString(
+  await ref.read(sharedPreferencesProvider).setInt(
         prefsKeyEnvelopeId,
-        envelope.envelopeId.toString(),
+        envelope.envelopeId,
       );
 
   return true;

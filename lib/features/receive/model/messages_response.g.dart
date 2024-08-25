@@ -13,7 +13,7 @@ _$MessagesResponseImpl _$$MessagesResponseImplFromJson(
       envelopeId: (json['envelope_id'] as num).toInt(),
       content: json['content'] as String,
       writerId: (json['writer_id'] as num).toInt(),
-      writer_name: json['writer_name'] as String,
+      writerName: json['writer_name'] as String,
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
@@ -29,7 +29,7 @@ Map<String, dynamic> _$$MessagesResponseImplToJson(
       'envelope_id': instance.envelopeId,
       'content': instance.content,
       'writer_id': instance.writerId,
-      'writer_name': instance.writer_name,
+      'writer_name': instance.writerName,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),
     };

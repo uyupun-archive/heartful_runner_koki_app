@@ -17,14 +17,15 @@ Future<bool> relayMessage(
 }) async {
   final token = ref.watch(sharedPreferencesProvider).getString(prefsKeyToken);
   final envelopeId =
-      ref.watch(sharedPreferencesProvider).getString(prefsKeyEnvelopeId);
+      ref.watch(sharedPreferencesProvider).getInt(prefsKeyEnvelopeId);
+
   if (envelopeId != null) {
     return false;
   }
 
   final reqBody = jsonEncode(
     MessageRequest(
-      envelopeId: int.parse(envelopeId!),
+      envelopeId: envelopeId!,
       content: content,
       writerName: writerName,
     ).toJson(),

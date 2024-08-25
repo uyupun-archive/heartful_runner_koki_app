@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // 画面遷移
+                const RelayScanPageRoute().push(context);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // 画面遷移
+                const ReceivePageRoute().push(context);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

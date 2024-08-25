@@ -50,7 +50,7 @@ class _PageState extends ConsumerState<RelayScanPage> {
                     });
 
                     final isSuccess = await ref.read(
-                      VerifyEnvelopeProvider(code: value).future,
+                      verifyEnvelopeProvider(code: value).future,
                     );
 
                     if (isSuccess) {

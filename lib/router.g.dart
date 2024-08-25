@@ -18,6 +18,8 @@ List<RouteBase> get $appRoutes => [
       $relayScanPageRoute,
       $relayMessagePageRoute,
       $relayedPageRoute,
+      $receivePageRoute,
+      $receivedPageRoute,
     ];
 
 RouteBase get $topPageRoute => GoRouteData.$route(
@@ -259,6 +261,52 @@ extension $RelayedPageRouteExtension on RelayedPageRoute {
 
   String get location => GoRouteData.$location(
         '/relayed',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $receivePageRoute => GoRouteData.$route(
+      path: '/receive',
+      factory: $ReceivePageRouteExtension._fromState,
+    );
+
+extension $ReceivePageRouteExtension on ReceivePageRoute {
+  static ReceivePageRoute _fromState(GoRouterState state) =>
+      const ReceivePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/receive',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $receivedPageRoute => GoRouteData.$route(
+      path: '/received',
+      factory: $ReceivedPageRouteExtension._fromState,
+    );
+
+extension $ReceivedPageRouteExtension on ReceivedPageRoute {
+  static ReceivedPageRoute _fromState(GoRouterState state) =>
+      const ReceivedPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/received',
       );
 
   void go(BuildContext context) => context.go(location);

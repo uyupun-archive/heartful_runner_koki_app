@@ -12,7 +12,7 @@ class MessagesResponse with _$MessagesResponse {
     required int envelopeId,
     required String content,
     required int writerId,
-    required String writer_name,
+    required String writerName,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) = _MessagesResponse;

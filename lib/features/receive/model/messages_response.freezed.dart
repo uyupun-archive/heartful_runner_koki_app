@@ -24,7 +24,7 @@ mixin _$MessagesResponse {
   int get envelopeId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   int get writerId => throw _privateConstructorUsedError;
-  String get writer_name => throw _privateConstructorUsedError;
+  String get writerName => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -49,7 +49,7 @@ abstract class $MessagesResponseCopyWith<$Res> {
       int envelopeId,
       String content,
       int writerId,
-      String writer_name,
+      String writerName,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -73,7 +73,7 @@ class _$MessagesResponseCopyWithImpl<$Res, $Val extends MessagesResponse>
     Object? envelopeId = null,
     Object? content = null,
     Object? writerId = null,
-    Object? writer_name = null,
+    Object? writerName = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -94,9 +94,9 @@ class _$MessagesResponseCopyWithImpl<$Res, $Val extends MessagesResponse>
           ? _value.writerId
           : writerId // ignore: cast_nullable_to_non_nullable
               as int,
-      writer_name: null == writer_name
-          ? _value.writer_name
-          : writer_name // ignore: cast_nullable_to_non_nullable
+      writerName: null == writerName
+          ? _value.writerName
+          : writerName // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -123,7 +123,7 @@ abstract class _$$MessagesResponseImplCopyWith<$Res>
       int envelopeId,
       String content,
       int writerId,
-      String writer_name,
+      String writerName,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -145,7 +145,7 @@ class __$$MessagesResponseImplCopyWithImpl<$Res>
     Object? envelopeId = null,
     Object? content = null,
     Object? writerId = null,
-    Object? writer_name = null,
+    Object? writerName = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -166,9 +166,9 @@ class __$$MessagesResponseImplCopyWithImpl<$Res>
           ? _value.writerId
           : writerId // ignore: cast_nullable_to_non_nullable
               as int,
-      writer_name: null == writer_name
-          ? _value.writer_name
-          : writer_name // ignore: cast_nullable_to_non_nullable
+      writerName: null == writerName
+          ? _value.writerName
+          : writerName // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -190,7 +190,7 @@ class _$MessagesResponseImpl extends _MessagesResponse {
       required this.envelopeId,
       required this.content,
       required this.writerId,
-      required this.writer_name,
+      required this.writerName,
       this.createdAt,
       this.updatedAt})
       : super._();
@@ -207,7 +207,7 @@ class _$MessagesResponseImpl extends _MessagesResponse {
   @override
   final int writerId;
   @override
-  final String writer_name;
+  final String writerName;
   @override
   final DateTime? createdAt;
   @override
@@ -215,7 +215,7 @@ class _$MessagesResponseImpl extends _MessagesResponse {
 
   @override
   String toString() {
-    return 'MessagesResponse(id: $id, envelopeId: $envelopeId, content: $content, writerId: $writerId, writer_name: $writer_name, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'MessagesResponse(id: $id, envelopeId: $envelopeId, content: $content, writerId: $writerId, writerName: $writerName, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -229,8 +229,8 @@ class _$MessagesResponseImpl extends _MessagesResponse {
             (identical(other.content, content) || other.content == content) &&
             (identical(other.writerId, writerId) ||
                 other.writerId == writerId) &&
-            (identical(other.writer_name, writer_name) ||
-                other.writer_name == writer_name) &&
+            (identical(other.writerName, writerName) ||
+                other.writerName == writerName) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -240,7 +240,7 @@ class _$MessagesResponseImpl extends _MessagesResponse {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, envelopeId, content,
-      writerId, writer_name, createdAt, updatedAt);
+      writerId, writerName, createdAt, updatedAt);
 
   /// Create a copy of MessagesResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -265,7 +265,7 @@ abstract class _MessagesResponse extends MessagesResponse {
       required final int envelopeId,
       required final String content,
       required final int writerId,
-      required final String writer_name,
+      required final String writerName,
       final DateTime? createdAt,
       final DateTime? updatedAt}) = _$MessagesResponseImpl;
   const _MessagesResponse._() : super._();
@@ -282,7 +282,7 @@ abstract class _MessagesResponse extends MessagesResponse {
   @override
   int get writerId;
   @override
-  String get writer_name;
+  String get writerName;
   @override
   DateTime? get createdAt;
   @override

@@ -53,7 +53,7 @@ class _PageState extends ConsumerState<ReceivePage> {
                     );
 
                     if (isSuccess) {
-                      // TODO: ページ遷移
+                      const ReceivedPageRoute().go(context);
                     } else {
                       setState(() {
                         _isError = true;
