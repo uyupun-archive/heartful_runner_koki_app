@@ -65,7 +65,7 @@ class RelayMessagePage extends HookConsumerWidget {
                   ).future);
 
                   if (isSuccess) {
-                    const DeliveringPageRoute().go(context);
+                    const RelayedPageRoute().go(context);
                   } else {
                     isError.value = true;
                   }
