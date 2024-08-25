@@ -6,8 +6,8 @@ import 'package:spajam_24_app/common/provider/shared_preferences.dart';
 import 'package:spajam_24_app/features/deliver/model/envelope_request.dart';
 import 'package:spajam_24_app/features/deliver/model/envelope_response.dart';
 import 'package:spajam_24_app/features/deliver/model/message_request.dart';
-import 'package:spajam_24_app/utils/api_headers.dart';
-import 'package:spajam_24_app/utils/base_url.dart';
+import 'package:spajam_24_app/pages/top/utils/api_headers.dart';
+import 'package:spajam_24_app/pages/top/utils/base_url.dart';
 
 part 'deliver_provider.g.dart';
 

@@ -5,8 +5,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
 import 'package:spajam_24_app/features/signin/model/signin_request.dart';
 import 'package:spajam_24_app/features/signin/model/signin_response.dart';
-import 'package:spajam_24_app/utils/api_headers.dart';
-import 'package:spajam_24_app/utils/base_url.dart';
+import 'package:spajam_24_app/pages/top/utils/api_headers.dart';
+import 'package:spajam_24_app/pages/top/utils/base_url.dart';
 
 part 'signin_provider.g.dart';
 
