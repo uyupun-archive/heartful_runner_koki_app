@@ -23,7 +23,7 @@ class RelayedPage extends StatelessWidget {
               const Spacer(),
               TextButton(
                 onPressed: () {
-                  const DeliveringPageRoute().push(context);
+                  const DeliveringPageRoute().go(context);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
