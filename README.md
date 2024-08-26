@@ -1,4 +1,8 @@
-# spajam_24_app
+# heartful_runner_koki_app
+
+<img src="images/logo1.png" width="200px">
+
+<img src="images/logo2.png" width="500px">
 
 ## 環境構築
 
