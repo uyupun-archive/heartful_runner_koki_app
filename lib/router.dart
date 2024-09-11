@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
+import 'package:spajam_24_app/pages/Received/index.dart';
 import 'package:spajam_24_app/pages/deliver/index.dart';
 import 'package:spajam_24_app/pages/delivering/index.dart';
 import 'package:spajam_24_app/pages/hello/index.dart';
 import 'package:spajam_24_app/pages/home/index.dart';
 import 'package:spajam_24_app/pages/pass/index.dart';
+import 'package:spajam_24_app/pages/receive/index.dart';
+import 'package:spajam_24_app/pages/relayed/index.dart';
+import 'package:spajam_24_app/pages/relay/message.dart';
+import 'package:spajam_24_app/pages/relay/scan.dart';
 import 'package:spajam_24_app/pages/signin/index.dart';
 import 'package:spajam_24_app/pages/signup/index.dart';
 import 'package:spajam_24_app/pages/top/index.dart';
@@ -95,6 +100,61 @@ class PassPageRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const PassPage();
 }
 
+@TypedGoRoute<RelayScanPageRoute>(
+  path: '/relay/scan',
+)
+class RelayScanPageRoute extends GoRouteData {
+  const RelayScanPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const RelayScanPage();
+}
+
+@TypedGoRoute<RelayMessagePageRoute>(
+  path: '/relay/message',
+)
+class RelayMessagePageRoute extends GoRouteData {
+  const RelayMessagePageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const RelayMessagePage();
+}
+
+@TypedGoRoute<RelayedPageRoute>(
+  path: '/relayed',
+)
+class RelayedPageRoute extends GoRouteData {
+  const RelayedPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const RelayedPage();
+}
+
+@TypedGoRoute<ReceivePageRoute>(
+  path: '/receive',
+)
+class ReceivePageRoute extends GoRouteData {
+  const ReceivePageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const ReceivePage();
+}
+
+@TypedGoRoute<ReceivedPageRoute>(
+  path: '/received',
+)
+class ReceivedPageRoute extends GoRouteData {
+  const ReceivedPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const ReceivedPage();
+}
+
 final router = GoRouter(
   debugLogDiagnostics: true,
   initialLocation: '/',
@@ -103,11 +163,16 @@ final router = GoRouter(
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(prefsKeyToken);
     final code = prefs.getString(prefsKeyCode);
+    final envelopeId = prefs.getInt(prefsKeyEnvelopeId);
 
     if (token != null) {
-      if (state.uri.toString() == '/' && code != null) {
-        return '/delivering';
-      } else if (state.uri.toString() == '/') {
+      if (state.uri.toString() == '/') {
+        if (code != null) {
+          if (envelopeId != null) {
+            return '/relay/message';
+          }
+          return '/delivering';
+        }
         return '/home';
       }
     }

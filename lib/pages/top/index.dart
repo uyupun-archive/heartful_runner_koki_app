@@ -18,10 +18,7 @@ class TopPage extends HookWidget {
               height: 150.0,
               fit: BoxFit.contain, // 画像が150x150の領域に収まるように調整
             ),
-            const Text(
-              'ハートフルランナー聖(こうき)',
-              textScaler: TextScaler.linear(2.23),
-            ),
+            const Text('ハートフルランナー　聖'),
             const Spacer(),
             TextButton(
               onPressed: () {
