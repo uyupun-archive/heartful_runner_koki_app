@@ -49,10 +49,4 @@ flutter:
   assets:
     - assets/fire.gif
     - assets/no_fire.png
-    - assets/launchIcon.png
-
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/launchIcon.png"
-  adaptive_icon_foreground: "assets/launchIcon.png" # 前景部分の画像
+    - assets/launch_icon.png

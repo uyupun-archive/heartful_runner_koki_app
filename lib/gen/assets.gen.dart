@@ -14,7 +14,7 @@ class Assets {
 
   static const AssetGenImage fire = AssetGenImage('assets/fire.gif');
   static const AssetGenImage launchIcon =
-      AssetGenImage('assets/launchIcon.png');
+      AssetGenImage('assets/launch_icon.png');
   static const AssetGenImage noFire = AssetGenImage('assets/no_fire.png');
 
   /// List of all assets
