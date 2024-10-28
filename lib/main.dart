@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
       title: 'ハートフルランナー聖(こうき)',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),
       routerConfig: router,
