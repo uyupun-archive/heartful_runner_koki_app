@@ -19,7 +19,7 @@ Future<bool> relayMessage(
   final envelopeId =
       ref.watch(sharedPreferencesProvider).getInt(prefsKeyEnvelopeId);
 
-  if (envelopeId != null) {
+  if (envelopeId == null) {
     return false;
   }
 
