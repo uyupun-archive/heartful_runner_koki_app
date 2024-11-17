@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:spajam_24_app/common/provider/shared_preferences.dart';
 import 'package:spajam_24_app/features/receive/model/envelope_receive_response.dart';
+import 'package:spajam_24_app/router.dart';
 
 class ReceivedPage extends HookConsumerWidget {
   const ReceivedPage({super.key});
@@ -45,6 +46,24 @@ class ReceivedPage extends HookConsumerWidget {
               const SizedBox(height: 24),
               Column(
                 children: widgets,
+              ),
+              const SizedBox(height: 24),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    const TopPageRoute().replace(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    '戻る',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
               ),
             ],
           ),
